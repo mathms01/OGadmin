@@ -1,0 +1,15 @@
+{
+  "name": "adminjoproj",
+  "version": "1.0.0",
+  "description": "Pprojet d'administration des JO 2020",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mathieu mussot",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.2.1"
+  }
+}
