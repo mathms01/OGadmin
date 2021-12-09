@@ -13,6 +13,35 @@ class SportController {
         });
     }
 
+    /**
+     * Récupérer un sport
+     */
+     async getById(req, res, id) {
+        const sport = await Sport.findById(id);
+
+        res.json({
+            sport: sport
+        });
+    }
+
+    /**
+     * Ajouter un sport
+     */
+     async Add(req, res, name, category, athletes) {
+
+        var sport = new Sport({name:name, category:category, athletes:athletes});
+
+        await sport.save(function (err, newSport) {
+            if (err) return console.error(err);
+            console.log(newSport.name + " saved to sports collection.");
+          })
+
+        res.json({
+            response: "Added new sport! ✅"
+        });
+    }
+
+
     // ... A COMPLETER ...
 }
 

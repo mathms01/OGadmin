@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongo_uri = "mongodb+srv://mms01:admin123@cluster0.aymhc.mongodb.net/appJO?retryWrites=true&w=majority";
-
+const mongo_uri = "mongodb://localhost/OGadmin";
 mongoose.connect(mongo_uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
