@@ -22,6 +22,18 @@ router.post('/sports',function(req,res){
     sportController.Add(req, res, sportName, sportCategory, sportAthletes);
 });
 
+router.post('/sports/:id',function(req,res){
+    var id = req.params.id;
+    var sportName = req.body.sportName;
+    var sportCategory = req.body.sportCategory;
+    var sportAthletes = req.body.sportAthletes;
+    sportController.Modify(req, res, id, sportName, sportCategory, sportAthletes);
+});
+
+router.delete('/sports/:id',function(req,res){
+    var id = req.params.id;
+    sportController.Delete(req, res, id);
+});
 // ... A COMPLETER ...
 
 module.exports = router;

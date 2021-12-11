@@ -41,7 +41,32 @@ class SportController {
         });
     }
 
+    /**
+     * Modifier un sport
+     */
+     async Modify(req, res, id, name, category, athletes) {
+        
+        const filter = { _id: id };
+        const update = { name: name, category:category, athletes:athletes };
 
+        Sport.findOneAndUpdate(filter, update, {upsert: true}, function(err, doc) {
+            if (err) return res.send(500, {error: err});
+            return res.send('Succesfully updated✅');
+        });
+    }
+
+    /**
+     * Supprimer un sport
+     */
+     async Delete(req, res, id) {
+        
+        const filter = { _id: id };
+
+        Sport.findOneAndDelete(filter, {upsert: true}, function(err, doc) {
+            if (err) return res.send(500, {error: err});
+            return res.send('Succesfully deleted ✅');
+        });
+    }
     // ... A COMPLETER ...
 }
 
