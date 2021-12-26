@@ -7,24 +7,9 @@ const athleteSchema = new mongoose.Schema({
     id:ObjectId,
     firstname: String,
     lastname: String,
-    gender: Gender,
-    country: Country
+    gender: String,
+    country: String
 });
-
-const Gender = {
-    Male: "Male",
-    Female: "Female"
-}
-
-const Country = {
-    FR:"fr",
-    AU:"au",
-    BR:"br",
-    CN:"cn",
-    MA:"ma",
-    RU:"ru", 
-    US:"us"
-}
 
 const Athlete = mongoose.model('Athlete', athleteSchema);
 
