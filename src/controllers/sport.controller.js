@@ -13,6 +13,12 @@ class SportController {
         });
     }
 
+    listForView(req, res) {
+        const sports = Sport.find();
+
+        return sports;
+    }
+
     /**
      * Récupérer un sport
      */

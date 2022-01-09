@@ -5,14 +5,12 @@ var ObjectId = require('mongodb').ObjectId;
 
 const SportController = require('../controllers/sport.controller');
 const sportController = new SportController();
-const Sport = require('../models/sport.model');
 
 //Views
-router.get('/sports.html', function(req, res) {
-    const sports = Sport.find();
-    console.log(sports);
+router.get('/view/sports/', function(req, res) {
+    const sports = sportController.listForView();
       
-    res.render('sports', {sport:"hello"});
+    res.render('sports', {sports});
 });
 
 router.get('/sports/', async (req, res) => {
